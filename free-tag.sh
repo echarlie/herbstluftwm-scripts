@@ -1,9 +1,16 @@
 #!/bin/bash
-for i in 1 2 3 4 5 6 7 8 9 0
+for TAG in $(
+	for i in $(herbstclient attr tags.by-name.); do
+		echo $i |\
+		grep '\.'|\
+		sed -r -e "s/([0-9]*)\./\1/" \
+			-e '/attributes/d'
+	done
+	)
 do
-	if [ `herbstclient attr tags.$i.client_count` = 0 ]
+	if [ `herbstclient attr tags.by-name.$TAG.client_count` = 0 ]
 	then
-		echo $i
+		echo $TAG
 		break
 	fi
 done

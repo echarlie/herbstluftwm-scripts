@@ -9,4 +9,4 @@ do
 	printf " "
 	herbstclient attr clients.$i.tag
 
-done | dmenu -i -p ":"| cut -d " " -f1
+done | dmenu -b -fn bitocra13 -nf "#efefef" -sb "mediumturquoise" -sf "#141414" -i -p ":"| cut -d " " -f1

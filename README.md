@@ -1,14 +1,14 @@
-#Herbstluftwm scripts
+# Herbstluftwm scripts
 
 This is a collection of scripts I've made, to simplify my life using
 herbstluftwm (https://herbstluftwm.org).
 
-##Scripts thus far
+## Scripts thus far
 
-- free-tag.sh -- find the first free tag, assuming they are indexed 1-9 then 0. Not very robust
+- free-tag.sh -- find the first free tag based on the output of ```herbstclient attr tags.by-name.```. Not very robust, and assumes tags are numeric
 - select-window.sh -- uses dmenu prompt to select a window. Ideally this would be very cwm-like, but it isn't very user-friendly, yet.
 
-##Example usage
+## Example usage
 
 Jump to a window, searched by name:
 
@@ -25,13 +25,13 @@ the next free tag, as move\_index doesn't take a WINID. That requires something 
 
 (note, it may be desireable to add some lock commands in there too)
 
-Just as a demonstration of the limitations of these scripts, there is this:
+Another useful example
 
     herbstclient load `free-tag.sh` "`herbstclient dump`"
 
-Ideally, this would move the current layout (and associated windows) to the next free tag, but
-instead it drops it back on the same tag.
+This moves the current layout (and associated windows) to the next free tag.
 
-##Links
+## Links
+
 - http://thedarnedestthing.com/herbstluftwm
   - This (with 3 companion posts) is my favourite demonstration of the power of scripting herbst.
